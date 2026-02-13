@@ -59,3 +59,36 @@ On  a ensuite vérifié que la mise à jour a bien été appliquée. En lançant
 Pour conclure sur cette partie on a réussi à automatiser toute la chaîne de production. Ansible est parti de rien et a pu créer les serveurs sur AWS, installé l’application, configuré un Load Balancer Nginx et même géré une sorte de mise à jour en direct. 
 
 # Partie 2 : VM orchestration avec Packer et OpenTofu
+
+Tout d’abord nous allons créer une AMI immuable contenant notre application Node.js et son gestionnaire de process PM2. 
+
+Lorsque l’on lançait le build on obtenait une erreur, en regardant la configuration  du fichier “  sample-app.pkr.hcl “ c’était la ligne “ "sudo su - app-user -c 'pm2 startup systemd -u app-user --hp /home/app-user'" “ on a donc modifié en “       "sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u app-user --hp /home/app-user", cela a permis de finaliser le build avec succès.
+L’image a pu ensuite être créee : 
+
+![alt text](image-4.png)
+
+Une fois notre AMI créer avec Packer nous sommes passés à la phase de dépliement automatisé avec OpenTofu. L’objectif étant de ne plus gérer les instances manuellement mais de déclarer notre infrastructure dans des fichiers .tf . 
+
+On a configuré un module ASG dans le fichier main.tf . Ce module utilise l'AMI précédemment générée et un script user-data.sh pour s'assurer que l'application Node.js est lancée par PM2 dès le démarrage de chaque instance. Nous avons défini une capacité souhaitée de 3 instances (desired_capacity = 3) pour garantir la disponibilité. 
+
+Nous avons ensuite ajouté un module ALB, contrairement à la partie Ansible où nous utilisions une IP fixe, l’ALB nous fournit un nom DNS unique. Il permet de répartir le trafic de manière équilibrée entre les 3 instances de notre ASG. 
+
+Grâce au fichier outputs.tf , nous avons configuré OpenTofu pour qu’il nous affiche directement l’URL DNS à la fin du déploiement ce qui permet de faciliter les tests.
+
+Egalement parfois les instances mettaient du temps à passer les Health Check d’AWS nous avons donc dû ajuster le délai d’attente wait_for_capacity_timeout = "0" pour faciliter la stabilisation. 
+
+![alt text](image-5.png)
+
+Pour permettre la mise à jour de notre application sans couper le service, nous avons configuré le bloc instance_refresh dans le module ASG d’OpenTofu. 
+
+Nous avons rencontrés des problèmes lors du déploiement de tofu apply tout d’abord il a fallut ajuster le bloc instance_refresh pour inclure max_healthy_percentage ce qui permet une mise à jour progressive des instances sans interruption du service.
+
+Nous avons modifié le fichier app.js pour changer le message de retour par “DevOps Base!”. Pour déployer ce changement, nous avons dû reconstruire une image disque complète avec Packer. Une fois qu’on a mis à jour l’ID de notre nouvelle AMI dans notre configuration OpenTofu nous avons lancé le tofu apply. Pour vérifier que le service restait disponible, j’ai exécuté une boucle curl dans le terminal. 
+
+![alt text](image-6.png)
+
+Pendant le déploiement, on a pu observer une phase de transition où le Load Balancer renvoyait alternativement l’ancien message (“Hello World!”) et le nouveau (“DevOps Base!”) cela permet de nous prouver que les nouvelles instances ont été intégrées progressivement, le trafic a été basculé de manière fluide et de pus on a pas d’erreurs pendant le processus. 
+En résumé, OpenTofu permet de créer tout un réseau de serveurs sur AWS en lançant juste quelques commandes. C'est beaucoup plus sûr que de tout faire à la main sur la console Amazon, car on écrit tout dans des fichiers : on ne peut donc pas oublier une étape.
+Le plus gros avantage qu' on a  vu, c'est la mise à jour sans coupure. On a pu changer le message de mon application et l'installer sur tous mes serveurs sans que le site ne s'arrête jamais. Les nouveaux serveurs remplacent les anciens automatiquement. Enfin, quand on n'en a plus besoin, on peut tout supprimer proprement en une seule fois, ce qui évite de payer pour rien.
+
+# Partie 3 : 
