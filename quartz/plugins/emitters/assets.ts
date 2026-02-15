@@ -1,4 +1,4 @@
-import { FilePath, joinSegments, slugifyFilePath } from "../../util/path"
+import { FilePath, getFileExtension, joinSegments, slugifyFilePath } from "../../util/path"
 import { QuartzEmitterPlugin } from "../types"
 import path from "path"
 import fs from "fs"
@@ -11,10 +11,19 @@ const filesToCopy = async (argv: Argv, cfg: QuartzConfig) => {
   return await glob("**", argv.directory, ["**/*.md", ...cfg.configuration.ignorePatterns])
 }
 
+const assetSlug = (fp: FilePath) => {
+  const ext = getFileExtension(fp)
+  if (ext === ".html") {
+    return `${slugifyFilePath(fp, true)}${ext}`
+  }
+
+  return slugifyFilePath(fp)
+}
+
 const copyFile = async (argv: Argv, fp: FilePath) => {
   const src = joinSegments(argv.directory, fp) as FilePath
 
-  const name = slugifyFilePath(fp)
+  const name = assetSlug(fp)
   const dest = joinSegments(argv.output, name) as FilePath
 
   // ensure dir exists
@@ -42,7 +51,7 @@ export const Assets: QuartzEmitterPlugin = () => {
         if (changeEvent.type === "add" || changeEvent.type === "change") {
           yield copyFile(ctx.argv, changeEvent.path)
         } else if (changeEvent.type === "delete") {
-          const name = slugifyFilePath(changeEvent.path)
+          const name = assetSlug(changeEvent.path)
           const dest = joinSegments(ctx.argv.output, name) as FilePath
           await fs.promises.unlink(dest)
         }
