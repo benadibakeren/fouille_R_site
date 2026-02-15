@@ -4,6 +4,8 @@ title: TD 3
 
 # TD 3 : AFD (Analyse factorielle discriminante)
 
+[Ouvrir le TD 3 (HTML)](./III_AFD.html)
+
 ## Objectifs
 
 - Reducer la dimensionnalite avec l'AFD.

@@ -4,6 +4,8 @@ title: TD 4
 
 # TD 4 : AFD et classification supervisee
 
+[Ouvrir le TD 4 (HTML)](./IV_AFD.html)
+
 ## Objectifs
 
 - Utiliser les scores AFD pour classifier.

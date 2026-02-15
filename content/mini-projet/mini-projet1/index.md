@@ -4,6 +4,8 @@ title: Mini-projet 1
 
 # Mini-projet 1 : Classification bayesienne des emotions
 
+[Ouvrir le mini-projet 1 (HTML)](./project1_code.html)
+
 ## Objectifs
 
 - Predire l'emotion d'une phrase en langage naturel.

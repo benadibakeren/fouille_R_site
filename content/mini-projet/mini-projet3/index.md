@@ -4,6 +4,8 @@ title: Mini-projet 3
 
 # Mini-projet 3 : Classification de theses francaises
 
+[Ouvrir le mini-projet 3 (HTML)](./projet3.html)
+
 ## Objectifs
 
 - Classer des resumes de theses par domaine.

@@ -4,6 +4,8 @@ title: TD 2
 
 # TD 2 : MANOVA
 
+[Ouvrir le TD 2 (HTML)](./II_MANOVA.html)
+
 ## Objectifs
 
 - Comprendre la logique de la MANOVA et ses liens avec l'ANOVA.

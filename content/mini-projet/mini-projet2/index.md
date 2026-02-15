@@ -4,6 +4,8 @@ title: Mini-projet 2
 
 # Mini-projet 2 : AFD sur tweets (sentiment)
 
+[Ouvrir le mini-projet 2 (HTML)](./projet2.html)
+
 ## Objectifs
 
 - Transformer des tweets en variables numeriques exploitables.

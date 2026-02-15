@@ -1,4 +1,4 @@
-# Bienvenue sur mon Portfolio DevOps
+# Bienvenue sur mon Portfolio fouille de données en R
 
 Voici nos travaux réalisés dans le cadre du cours.
 

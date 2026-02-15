@@ -4,6 +4,8 @@ title: TD 1
 
 # TD 1 : Classifieur bayesien naif
 
+[Ouvrir le TD 1 (HTML)](./I_BAYESIEN.html)
+
 ## Objectifs
 
 - Comprendre la logique d'un classifieur bayesien naif.
