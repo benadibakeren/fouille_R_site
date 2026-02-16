@@ -2,23 +2,28 @@
 title: Fouille_R
 publish: true
 ---
-# Fouille de donnees avec R
+# Fouille de données en R
 
-Ce site explique l'ensemble du depot **fouille_R** : TDs, mini-projets et projet final.
+Ces travaux ont été réalisés dans le cadre de l'unité fouille de données en R.
 
-## Plan rapide
+Ils ont été réalisés par deux étudiantes de l'ESIEE Paris : 
+- Méliana ZERROUG et Keren BENADIBA en filière datascience et IA
 
-- [[lab/lab1/|TD 1 - Classifieur bayesien naif]]
+Cette unité nous a permis de découvrir le langage de programmation R et d'utiliser la classification bayésienne dans des contextes textuels différents.
+
+
+## Plan 
+
+- [[lab/lab1/|TD 1 - Classifieur bayésien naif]]
 - [[lab/lab2/|TD 2 - MANOVA]]
 - [[lab/lab3/|TD 3 - AFD]]
-- [[lab/lab4/|TD 4 - AFD supervisee]]
+- [[lab/lab4/|TD 4 - AFD supervisée]]
 - [[mini-projet/|Mini-projets (1, 2, 3)]]
-- [[projet-final/|Projet final - Detection de texte IA]]
+- [[projet-final/|Projet final - Détection de texte IA]]
 
 ## Ce que contient le repo
 
-- **TDs** : bases theoriques et implementation en R (bayesien, MANOVA, AFD).
-- **Mini-projets** : NLP sur emotions, tweets, et theses de doctorat.
-- **Projet final** : detection de texte genere par IA (AFD + Bayes).
+- **TDs** : bases théoriques et implémentation en R (bayesien, MANOVA, AFD).
+- **Mini-projets** : NLP sur émotions, tweets, et thèses de doctorat.
+- **Projet final** : détection de texte généré par IA (AFD + Bayes).
 
-Si tu veux, je peux aussi ajouter une section "dataset" ou un glossaire.

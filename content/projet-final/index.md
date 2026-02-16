@@ -4,6 +4,10 @@ title: Projet final
 
 # Projet final : Détection de texte généré par IA
 
+
+[Ouvrir le projet final (HTML)](./projetfinal.html)
+
+
 ## Objectifs
 
 - Distinguer un texte humain d'un texte généré par IA.

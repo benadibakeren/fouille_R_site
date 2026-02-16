@@ -2,7 +2,7 @@
 title: Mini-projet 1
 ---
 
-# Mini-projet 1 : Classification bayesienne des emotions
+# Mini-projet 1 : Classification bayésienne des émotions
 
 [Ouvrir le mini-projet 1 (HTML)](./project1_code.html)
 
