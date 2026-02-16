@@ -8,21 +8,50 @@ title: Mini-projet 1
 
 ## Objectifs
 
-- Predire l'emotion d'une phrase en langage naturel.
-- Tester un classifieur bayesien naif sur des textes courts.
-- Comparer l'effet du pretraitement sur la performance.
+- Predire l'émotion d'une phrase en langage naturel.
+- Tester un classifieur bayésien naif sur des textes courts.
+- Comparer l'effet du prétraitement sur la performance.
 
 ## Dataset
 
 - **Emotion Classify Data** (Kaggle).
 
-## Methode
+## Problématique
+
+Peut-on déterminer automatiquement si un texte exprime :
+
+- Joie
+- Colère
+- Tristesse
+- Peur
+- Amour
+- Surprise
+
+en utilisant uniquement du texte ?
+
+
+## Méthodologie
 
 - Nettoyage du texte (minuscule, ponctuation, chiffres, stopwords).
 - Tokenization et stemming/lemmatisation.
 - Vectorisation **TF-IDF** avec **bi-grammes**.
 - Entrainement d'un **classifieur bayesien naif**.
 - Evaluation par distribution des classes et performance globale.
+
+## Résultats
+
+Le modèle permet :
+- Une classification rapide
+- Une interprétation claire
+- Une base solide pour comparer avec d'autres méthodes
+
+Cependant, certaines émotions proches sont parfois confondues (ex : tristesse / peur).
+
+## Conclusion 
+
+Ce premier projet montre l’efficacité du modèle bayésien en traitement automatique du langage.
+
+Il constitue une base solide pour améliorer les performances dans les projets suivants.
 
 ## Livrables
 

@@ -9,22 +9,54 @@ title: TD 2
 ## Objectifs
 
 - Comprendre la logique de la MANOVA et ses liens avec l'ANOVA.
-- Implementer le calcul des inerties **totale**, **intra** et **inter**.
-- Valider les resultats avec la fonction `manova` de R.
+- Implémenter le calcul des inerties **totale**, **intra** et **inter**.
+- Valider les résultats avec la fonction `manova` de R.
 
 ## Description
 
-Ce TD developpe une fonction MANOVA generique. L'idee est d'ecrire toutes les
-etapes mathematiques pour comparer des groupes sur plusieurs variables :
+Ce TD développe une fonction MANOVA générique. L'idée est d'écrire toutes les
+étapes mathématiques pour comparer des groupes sur plusieurs variables :
 
-- calcul de la **SST** (somme des carres totale),
+- calcul de la **SST** (somme des carrés totale),
 - calcul de la **SS intra**,
-- derivation de la **SS inter**,
+- dérivation de la **SS inter**,
 - calcul de **Lambda de Wilks** et de la statistique de test.
 
-Le jeu de donnees utilise (**MANOVA_DATASET.csv**) porte sur la composition
+Le jeu de données utilise (**MANOVA_DATASET.csv**) porte sur la composition
 chimique de poteries antiques, avec plusieurs variables numeriques et une
 variable de groupe.
 
-Le TD se termine par une comparaison avec `manova`, afin de verifier que la
-fonction implementee reproduit les resultats attendus.
+Le TD se termine par une comparaison avec `manova`, afin de vérifier que la
+fonction implémentée reproduit les résultats attendus.
+
+
+## Principe théorique de MANOVA
+
+La MANOVA teste l’égalité des vecteurs de moyennes entre groupes en utilisant des statistiques comme :
+
+- Wilks’ Lambda
+- Pillai’s Trace
+- Hotelling-Lawley
+
+Elle repose sur l’analyse des matrices de variance-covariance.
+
+
+## Méthodologie
+
+- Vérification des hypothèses (normalité  multivariée, homogénéité des matrices de covariance)
+- Construction du modèle MANOVA
+- Analyse des statistiques de test
+- Interprétation des p-values
+
+## Résultats 
+
+La MANOVA permet :
+
+- De détecter un effet global du facteur explicatif
+- D’éviter la multiplication des tests séparés
+- De mieux comprendre les interactions multivariées
+
+## Conclusion 
+
+La MANOVA est pertinente lorsque plusieurs variables dépendantes sont liées entre elles.
+Elle fournit une vision globale plus cohérente que des ANOVA indépendantes.

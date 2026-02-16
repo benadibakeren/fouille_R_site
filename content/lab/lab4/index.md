@@ -8,19 +8,29 @@ title: TD 4
 
 ## Objectifs
 
-- Utiliser les scores AFD pour classifier.
-- Mesurer la qualite d'une classification (matrice de confusion).
-- Mettre en pratique la logique distance-centre de groupe.
+Cette partie applique l’AFD dans un cadre plus opérationnel :
+
+- Interprétation des axes
+- Analyse des contributions des variables
+- Évaluation des performances de classification
 
 ## Description
 
-Ce TD reprend les resultats de l'AFD (TD3) et passe a la **classification**.
-L'idee est de projeter les individus sur les axes factoriels, puis :
+Ce TD reprend les résultats de l'AFD (TD3) et passe à la **classification**.
+L'idée est de projeter les individus sur les axes factoriels, puis :
 
 - calculer le **centre** de chaque groupe,
 - mesurer les **distances** aux centres,
-- affecter chaque individu a la classe la plus proche,
-- evaluer la performance via une matrice de confusion.
+- affecter chaque individu à la classe la plus proche,
+- évaluer la performance via une matrice de confusion.
 
-Le jeu de donnees reste **VIN_QUALITE.txt**. Le TD permet de relier analyse
-factorielle, visualisation et classification supervisee.
+Le jeu de données reste **VIN_QUALITE.txt**. 
+
+## Interprétation
+
+Les axes discriminants mettent en évidence :
+
+- Les variables les plus structurantes
+- Les groupes les plus proches
+- Les éventuels recouvrements entre classes
+
