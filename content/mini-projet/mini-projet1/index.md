@@ -8,7 +8,7 @@ title: Mini-projet 1
 
 ## Objectifs
 
-- Predire l'émotion d'une phrase en langage naturel.
+- Prédire l'émotion d'une phrase en langage naturel.
 - Tester un classifieur bayésien naif sur des textes courts.
 - Comparer l'effet du prétraitement sur la performance.
 
@@ -50,7 +50,6 @@ Cependant, certaines émotions proches sont parfois confondues (ex : tristesse /
 ## Conclusion 
 
 Ce premier projet montre l’efficacité du modèle bayésien en traitement automatique du langage.
-
 Il constitue une base solide pour améliorer les performances dans les projets suivants.
 
 ## Livrables

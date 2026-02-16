@@ -14,13 +14,13 @@ title: TD 1
 
 ## Description
 
-Ce TD a pour but d'appliquer un classifieur bayésien naif **pas a pas**. Le but est de décomposer la règle de Bayes et de comprendre comment sont calculées :
+Ce TD a pour but d'appliquer un classifieur bayésien naif **pas à pas**. Le but est de décomposer la règle de Bayes et de comprendre comment sont calculées :
 
 - la **vraisemblance** (probabilites conditionnelles),
 - les **probabilités à postériori**,
 - la décision finale par **maximisation**.
 
-Le travail se fait d'abord sur un **jeu de données simple** (exemple du cours), puis sur un jeu plus grand pour verifier sa robustesse. Le TD insiste sur :
+Le travail se fait d'abord sur un **jeu de données simple** (exemple du cours), puis sur un jeu plus grand pour vérifier sa robustesse. Le TD insiste sur :
 
 - le rôle de l'hypothèse d'indépendance,
 - la construction des tables de probabilités,
@@ -31,7 +31,7 @@ Le travail se fait d'abord sur un **jeu de données simple** (exemple du cours),
 
 - Nettoyage et préparation des données
 - Séparation train / test
-- Estimation des probabilités a priori
+- Estimation des probabilités à priori
 - Estimation des vraisemblances
 - Prédiction sur l’échantillon test
 - Analyse des performances (accuracy, matrice de confusion)

@@ -19,14 +19,14 @@ Cette partie applique l’AFD dans un cadre plus opérationnel :
 Ce TD reprend les résultats de l'AFD (TD3) et passe à la **classification**.
 L'idée est de projeter les individus sur les axes factoriels, puis :
 
-- calculer le **centre** de chaque groupe,
-- mesurer les **distances** aux centres,
-- affecter chaque individu à la classe la plus proche,
-- évaluer la performance via une matrice de confusion.
+- Calculer le **centre** de chaque groupe,
+- Mesurer les **distances** aux centres,
+- Affecter chaque individu à la classe la plus proche,
+- Evaluer la performance via une matrice de confusion.
 
 Le jeu de données reste **VIN_QUALITE.txt**. 
 
-## Interprétation
+## Résultats
 
 Les axes discriminants mettent en évidence :
 
