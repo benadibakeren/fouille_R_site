@@ -5,7 +5,7 @@ title: Projet final
 # Projet final : Détection de texte généré par IA
 
 
-[Ouvrir le projet final (HTML)](./projetfinal.html)
+[Ouvrir le projet final (HTML)](./projet_final.html)
 
 
 ## Objectifs
@@ -56,6 +56,7 @@ Les analyses multivariées et les méthodes de discrimination permettent de :
 - Construire des modèles capables de distinguer certains textes générés par l’IA
 
 En conclusion, les méthodes statistiques offrent un cadre pertinent pour explorer la détection de textes générés par l’IA, tout en soulignant la nécessité d’une interprétation prudente des résultats et d’une amélioration continue des modèles.
+Dans notre cas, nous avons obtenu un résultat quasiment parfait, il faut donc l'interpréter avec prudence.
 
 ## Livrables
 
